@@ -1,0 +1,411 @@
+html, body, .grid-container { 
+  height: 100%; 
+  margin: 0; 
+
+  overflow-x: hidden; 
+
+  --color-text-darkgray: #0f0f0f;
+  --color-text-gray: #505050;
+
+  --color-lightgrey: #d8d8d8;
+  --color-shadow-gray: #f0f0f0;
+
+  --color-neum-light: #f2f2f2;
+  --color-neum-mid: #e0e5ec;
+  --color-neum-dark: #abbad1;
+
+  --color-neum-mid-darker: #e0e5ec;
+  --color-neum-mid-hover: #d2d9e4;
+
+  --color-tpr-red: #aa0000;
+  --color-tpr-darkred: darkred;
+
+  --color-gray0: #f2f2f2;
+  --color-gray1: #333;
+
+  --color-merc: #00d2be;
+  --color-rbr: #1e41ff;
+  --color-rbr-dark: #001e3c;
+  --color-redcar: #C80000;
+  --color-renault: #FFF500;
+  --color-pinkcar: #f596c8;
+  --color-mclaren: #ff8700;
+  --color-alphatauri: #ffffff;
+  --color-haas: #787878;
+  --color-alfa: #9b0000;
+  --color-williams: #0082fa;
+
+  --color-britishracinggreen: #004225;
+
+  background: #fdfdfd;
+}
+
+body {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.feed-list-item:active {
+  background-color: var(--color-neum-mid-hover); 
+}
+
+.click-shadow:active {
+  background-color: var(--color-neum-mid-hover); 
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.post-link:hover {
+  text-decoration: underline;
+}
+
+.o {
+  background-color: rgb(230, 228, 209);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+a {
+  color: rgb(36, 3, 3);
+  display: block;
+}
+
+h1, h2, h3 {
+  margin-left: 8px;
+  color: #111111;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: larger;
+}
+
+h4 {
+  margin-block-start: 8px;
+  margin-block-end: -0.8em !important;
+}
+
+
+#logo-inner-block {
+ display: block;
+}
+
+#logo-inner-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+#logo-png {
+  border-radius: 6px;
+  border: 1px solid var(--color-williams);
+
+}
+#title-text {
+  margin: 0;
+  margin-top: 4px;
+  padding-left: 4px;
+
+  font-weight: 400;
+  font-size: medium;
+}
+
+ul.footer-flex-container {
+  padding-inline-start: 0 !important;
+}
+
+/* ========================================================================= */
+/* ========================================================================= */
+.grid-container {
+
+  margin-top: 10px; 
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11pt;
+
+  display: grid;
+  grid-template-columns: minmax(0px, 500px) 800px minmax(0px, 620px);
+  grid-template-rows: auto 24px 2.5fr 0.2fr;
+  max-width: 100%;
+  /* min-width: 320px; */
+  gap: 20px 10px;
+
+  grid-template-areas: "whitespace-left title whitespace-right"
+        "whitespace-left navigation whitespace-right"
+        "whitespace-left content-pane whitespace-right"
+        "whitespace-left footer whitespace-right";
+  
+  z-index: 10;
+}
+
+/* ========================================================================= */
+/* ========================================================================= */
+
+.title { 
+  padding: 20px 10px 10px 10px;
+  
+  grid-area: title;
+  justify-self: center;
+  max-width: 1080px;
+
+  /* border: 1px solid black; */
+}
+
+
+.navigation {
+  margin-top: 0px;  
+
+  grid-area: navigation;
+  max-width: 1080px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "button-bar profile"; 
+
+  z-index: 100;
+
+  border-color: var(--color-rbr-dark) !important;
+}
+
+.button-bar { 
+  grid-area: button-bar; 
+  margin-left: 12px;
+  color: black;
+  align-self: center;
+
+  z-index: 0;
+}
+
+.content-pane { 
+  grid-area: content-pane;
+  /* max-width: 1080px; */
+  max-width: 1080px;
+  z-index: 10;
+
+}
+
+.content-pane > div {
+  background-color: white; 
+}
+
+.footer { 
+  grid-area: footer; 
+  text-align: center;
+  font-size: 10pt;
+  color: #444444;
+
+  justify-self: center;
+}
+
+
+.grid-container *:after { 
+ /* content:attr(class); */
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+
+.nav-flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.nav-flex-container > div {
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+.nav-flex-container a{
+  color: black;
+}
+
+.feed-list {
+  padding: 0;
+}
+
+.feed-flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  list-style-type: none;
+  padding: 4px;
+}
+
+.flex-thumbnail {
+  order: 1;
+  width: 120px;
+}
+.flex-content {
+  order: 2;
+}
+
+.feed-item-body-list {
+  list-style-type: none;
+  padding-left: 8px;
+}
+
+.feed-img {
+  height: 72px;
+  max-width: 96px;
+  border: 1px solid var(--color-rbr-dark);
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  object-fit: cover;
+
+}
+
+.feed-list-item {
+  margin: 0px 0px;
+  padding: 4px 0px;
+
+  /* border-top: 1px solid var(--color-neum-dark); */
+  border-bottom: 1px solid var(--color-haas);
+
+  font-size: small;
+}
+
+.feed-list > li:first-child {
+  border-top: 1px solid var(--color-haas);
+}
+
+.feed-item-title {
+  color: var(--color-text-darkgray);
+  font-size: larger;
+}
+.feed-item-source-link {
+  color: var(--color-britishracinggreen);
+}
+.feed-item-source-link:hover {
+  text-decoration: underline;
+}
+
+.feed-item-context {
+  color: #181864;
+}
+
+.feed-item-tags {
+  color: var(--color-rbr);
+  font-style: italic;
+}
+
+.tags-flex-container {
+  display: flex;
+  flex-direction: row;
+  
+  flex-wrap: wrap;
+
+  padding: 0;
+
+}
+.tag-flex-item {
+  margin-right: 4px;
+  padding: 1px 3px;
+  border: 1px solid #181864;
+}
+
+
+
+.footer-flex-container {
+
+  width: 312px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+
+}
+
+.neuneu-border {
+  border-radius: 0px;
+  border: 1px solid var(--color-tpr-darkred);
+
+  z-index: 1000;
+}
+
+.neuneu-shadow {
+/* For Neumorphism Effect */
+  border-radius: 0px;
+
+  /* background-color: var(--color-neum-mid); */
+  box-shadow: 9px 9px 16px var(--color-neum-dark), -9px -9px 16px var(--color-neum-light) ;
+
+  opacity: 0.5;
+  
+}
+
+#title-shadow {
+  grid-area: title;
+  z-index: 5;
+  justify-self: center;
+
+  margin: 0;
+  padding: 0;
+
+  /* width: 300px; */
+  width: 180px;
+  
+  border-radius: 0px;
+  box-shadow: 9px 9px 16px var(--color-neum-dark), -9px -9px 16px var(--color-neum-light) ;
+}
+
+#navigation-shadow {
+  grid-area: navigation;
+  z-index: 0;
+}
+#content-pane-shadow {
+  grid-area: content-pane;
+  max-width: 1080px;
+  z-index: 1;
+}
+
+/* ========================================================================= */
+/* ========================================================================= */
+.content-grid {
+
+  margin: 0;
+  padding: 0;
+  
+  display: grid !important;
+  grid-template-columns: 0.6fr 0.4fr;
+  grid-template-rows: auto;
+  max-width: 100%;
+  /* min-width: 320px; */
+  gap: 10px 16px;
+
+  grid-template-areas: "left-feed right-feed"
+                        "left-feed .";
+}
+/* ========================================================================= */
+/* ========================================================================= */
+
+.left-feed {
+  grid-area: left-feed;
+  border-color: var(--color-britishracinggreen);
+}
+
+.right-feed {
+  grid-area: right-feed;
+  border-color: var(--color-alfa)
+}
+
+#left-feed-shadow {
+  grid-area: left-feed;
+}
+
+#right-feed-shadow {
+  grid-area: right-feed;
+}
+
